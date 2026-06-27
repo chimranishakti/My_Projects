@@ -1,53 +1,58 @@
-# 🎬 Movie Finder Project (PHP + MySQL)
+# 🎬 Movie Finder
 
-## Kya karta hai ye project?
-Movie ka naam search karo → milta hai:
-- Genre (Comedy, Romance, Horror, etc.)
-- Lead Actors/Actresses
-- Story Summary (Plot)
-- IMDB Rating, Poster
-- "Favorites" mein save kar sakte ho (MySQL database mein)
+A web application built with PHP and MySQL that lets users search for any movie or TV show and instantly view its genre, lead cast, and story summary using the OMDB API.
 
----
+## Features
 
-## Setup Steps (XAMPP pe)
+- Search any movie or TV show by title
+- View genre, lead actors/actresses, and plot summary
+- See IMDB rating and poster
+- Save favorite movies to a MySQL database
+- Custom "cinema marquee" themed UI
 
-### Step 1: Free OMDB API Key lo
-1. Jao: https://www.omdbapi.com/apikey.aspx
-2. "FREE" plan select karo, email daalo
-3. Email mein key aayegi (kuch minute lagte hain)
-4. `config.php` file kholo, ye line dhundo:
-   ```php
-   define('OMDB_API_KEY', 'YOUR_API_KEY_HERE');
-   ```
-   `YOUR_API_KEY_HERE` ki jagah apni key paste kar do.
+## Tech Stack
 
-### Step 2: Database banao
-1. XAMPP control panel mein Apache + MySQL start karo
-2. Browser mein `http://localhost/phpmyadmin` kholo
-3. Naya database banao naam: `movie_finder`
-4. `database.sql` file ko Import kar do (ya us file ke andar ki query SQL tab mein paste karke Run karo)
+- **Backend:** PHP
+- **Database:** MySQL
+- **API:** OMDB API
+- **Frontend:** HTML, CSS
 
-### Step 3: Project run karo
-1. Pura `movie_project` folder copy karo `C:\xampp\htdocs\` mein
-2. Browser mein kholo: `http://localhost/movie_project/`
-3. Movie search karo, enjoy karo!
+## Setup Instructions
 
----
+### 1. Get a free OMDB API Key
+- Visit [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx)
+- Select the "FREE" plan and enter your email
+- Activate the key from the confirmation email
+- Open `config.php` and replace the placeholder:
+```php
+  define('OMDB_API_KEY', 'YOUR_API_KEY_HERE');
+```
 
-## Files kya kya hain
-- `config.php` → Database connection + API key
-- `index.php` → Cover/landing page (Movie Finder ka intro)
-- `search.php` → Search page (movie dhundo yahan)
-- `save.php` → Favorite movie ko DB mein save karta hai
-- `favorites.php` → Saved movies dikhata hai, delete option ke saath
-- `style.css` → Cinema marquee theme design
-- `database.sql` → MySQL table create karne ki query
+### 2. Set up the database
+- Start Apache and MySQL in XAMPP
+- Open `http://localhost/phpmyadmin`
+- Create a new database named `movie_finder`
+- Import the `database.sql` file (or run its query in the SQL tab)
 
----
+### 3. Run the project
+- Copy the project folder into `C:\xampp\htdocs\`
+- Open `http://localhost/movie_project/` in your browser
 
-## Future Improvements (agar marks ke liye extra features chahiye)
-- Genre ke basis pe filter/sort
-- Multiple movie search results (TV series vs Movie)
-- User login system (har user ki apni favorites list)
-- Search history table
+## Project Structure
+
+| File | Description |
+|------|-------------|
+| `config.php` | Database connection and API key |
+| `index.php` | Landing page |
+| `search.php` | Movie search page |
+| `save.php` | Saves a movie to favorites |
+| `favorites.php` | Displays and manages saved favorites |
+| `style.css` | UI styling |
+| `database.sql` | Database table schema |
+
+## Future Improvements
+
+- Filter/sort results by genre
+- Handle multiple search results (movie vs. series)
+- User authentication with personal favorites lists
+- Search history tracking
